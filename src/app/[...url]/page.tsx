@@ -2,12 +2,9 @@ import ChatWrapper from "@/components/ChatWrapper";
 import { ragChat } from "@/lib/rag-chat";
 import { redis } from "@/lib/redis";
 import { cookies } from "next/headers";
+import { PageProps } from "../../../.next/types/app/[...url]/page";
 
-interface PageProps {
-  params: {
-    url: string[];
-  };
-}
+
 
 function reconstructUrl({ url }: { url: string[] }) {
   const decodedComponents = url?.map((component) =>
